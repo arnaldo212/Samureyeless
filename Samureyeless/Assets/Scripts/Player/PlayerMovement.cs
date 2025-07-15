@@ -155,16 +155,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void HandleJump() {
-        // Reduce jump height if button released early
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
-        {
-            if (rb.linearVelocity.y > jumpForce * 0.4f)
-            {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * 0.4f);
-            }
-            //pState.jumping = false;
-            isJumpFalling = true;
-        }
+       
 
         // Normal jump
         if (!pState.jumping && jumpBufferCounter > 0 && coyoteTimeCounter > 0)
@@ -175,7 +166,13 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter = 0;
         }
 
-        
+        // Reduce jump height if button released early
+        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            //pState.jumping = false;
+            //isJumpFalling = true;
+        }
     }
 
     void UpdateJumpVariables() {
