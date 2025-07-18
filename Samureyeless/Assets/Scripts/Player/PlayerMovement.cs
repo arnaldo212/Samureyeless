@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -30,10 +31,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckX = 0.5f;
     [SerializeField] private LayerMask whatIsGround;
 
-    // State variables
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashTime;
+    [SerializeField] private float dashCooldown;
+
+    
     private float lastOnGroundTime;
     private bool isJumpFalling;
     PlayerStateList pState;
+    private bool canDash = true;
+    private bool dashed;
+    private float gravity;
 
     public static PlayerMovement Instance;
     private void Awake() {
@@ -53,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         pState = GetComponent<PlayerStateList>();
+        gravity = rb.gravityScale;
     }
 
     // Update is called once per frame
@@ -60,8 +69,8 @@ public class PlayerMovement : MonoBehaviour
     {
         GetInputs();
         UpdateJumpVariables();
-        //Move();
-        //Jump();
+        if (pState.dashing) return;
+        StartDash();
     }
 
     private void FixedUpdate() {
@@ -78,26 +87,29 @@ public class PlayerMovement : MonoBehaviour
             lastOnGroundTime = 0.1f;
         }
     }
+    //movimento principal do personagem
     private void Run(float lerpAmount) {
-        // Calculate target speed
+        if (pState.dashing) return; //não mexe quando da dash
+
         float targetSpeed = xAxis * runMaxSpeed;
 
-        // Cálculo adaptativo do lerpAmount
+        //calculo adaptativo do lerpAmount
         float adaptiveLerp;
         if (Grounded())
         {
-            adaptiveLerp = 0.8f; // Valor mais alto para resposta rápida no chão
+            adaptiveLerp = 0.8f; //valor mais alto para resposta rápida no chão
         }
         else
         {
-            adaptiveLerp = 0.3f; // Valor mais baixo para movimento suave no ar
+            adaptiveLerp = 0.3f; //valor mais baixo para movimento suave no ar
         }
 
+        //suaviza o movimento
         targetSpeed = Mathf.Lerp(rb.linearVelocity.x, targetSpeed, adaptiveLerp);
 
         targetSpeed = Mathf.Lerp(rb.linearVelocity.x, targetSpeed, lerpAmount);
 
-        // Calculate acceleration rate
+        //decide se acelara o freia
         float accelRate;
 
         if (lastOnGroundTime > 0)
@@ -130,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
             targetSpeed *= jumpHangMaxSpeedMult;
         }
 
-        // Momentum conservation
+        //mantém o momentum no ar
         if (doConserveMomentum && Mathf.Abs(rb.linearVelocity.x) > Mathf.Abs(targetSpeed) &&
             Mathf.Sign(rb.linearVelocity.x) == Mathf.Sign(targetSpeed) &&
             Mathf.Abs(targetSpeed) > 0.01f && lastOnGroundTime < 0)
@@ -138,12 +150,12 @@ public class PlayerMovement : MonoBehaviour
             accelRate = 0;
         }
 
-        // Apply movement force
+        //aplica a força calculada
         float speedDif = targetSpeed - rb.linearVelocity.x;
         float movement = speedDif * accelRate;
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
 
-        // Flip character sprite
+        //vira o sprite
         if (xAxis > 0.01f)
         {
             transform.localScale = Vector3.one;
@@ -154,24 +166,47 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void StartDash() {
+        if(Input.GetButtonDown("Dash") && canDash && !dashed)
+        {
+            StartCoroutine(Dash());
+            dashed = true;
+        }
+
+        if (Grounded())
+        {
+            dashed = false;
+        }
+    }
+
+    IEnumerator Dash() {
+        canDash = false;
+        pState.dashing = true;
+        rb.gravityScale = 0;
+        rb.linearVelocity = new Vector3(transform.localScale.x * dashSpeed, 0);
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = gravity;
+        pState.dashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
+
     private void HandleJump() {
-        // Reduce jump height if button released early
+        //pulo curto - se soltar o botão cedo, pula menos
         if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
         {
             if (rb.linearVelocity.y > jumpForce * 0.4f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * 0.4f);
             }
-            //pState.jumping = false;
             isJumpFalling = true;
         }
 
-        // Normal jump
+        //pulo normal
         if (!pState.jumping && jumpBufferCounter > 0 && coyoteTimeCounter > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             pState.jumping = true;
-           // isJumpFalling = false;
             jumpBufferCounter = 0;
         }
 
@@ -200,18 +235,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Move() {
-        rb.linearVelocity = new Vector2(walkSpeed * xAxis, rb.linearVelocity.y);
-
-        if(xAxis > 0.01f)
-        {
-            transform.localScale = Vector3.one;
-        }else if(xAxis < -0.01f)//se estiver indo pra esquesda, inverte o sprite
-        {
-            transform.localScale = new Vector3(-1 , 1, 1);
-        }
-    }
-
     public bool Grounded() {
         //faz tres raycast para checar se tem chão, um no centro, um na direita e um na esquerda do ponto de verificação
         if(Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround) 
@@ -223,47 +246,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             return false;
-        }
-    }
-
-    void Jump() {
-        //pula menos dependendo de quanto apertar espaço
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
-
-            pState.jumping = false;
-        }
-        //pulo "normal"
-        if (!pState.jumping)
-        {
-            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
-            {
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
-
-                pState.jumping = true;
-            }
-        }
-    }
-
-    void UpdateJumpVariables2() {
-        if (Grounded())
-        {
-            pState.jumping = false;
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCounter = jumpBufferFrames;
-        }
-        else
-        {
-            jumpBufferCounter--;
         }
     }
 
