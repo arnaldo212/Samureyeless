@@ -5,9 +5,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movimentação horizontal")]
     private Rigidbody2D rb;
-    [SerializeField] private float walkSpeed = 1;
+    //[SerializeField] private float walkSpeed = 1;
     private float xAxis;
-    private int jumpBufferCounter = 0;
+    private int jumpBufferCounter = 5;
     [SerializeField] private float jumpForce = 45;
     [SerializeField] private int jumpBufferFrames;
     private float coyoteTimeCounter = 0;
@@ -34,6 +34,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldown;
+
+    [Header("Configs de Ataque")]
+    [SerializeField] Transform SideAttackTransform;
+    [SerializeField] Vector2 SideAttackArea;
+    [SerializeField] LayerMask attacableLayer;
+    bool attack = false;
+    [SerializeField] private float timeBetweenAtack;
+    private float timeSinceAttack = 0.5f;
+    
 
     
     private float lastOnGroundTime;
@@ -71,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         UpdateJumpVariables();
         if (pState.dashing) return;
         StartDash();
+        Attack();
     }
 
     private void FixedUpdate() {
@@ -80,6 +90,13 @@ public class PlayerMovement : MonoBehaviour
 
     void GetInputs() {
         xAxis = Input.GetAxisRaw("Horizontal");
+
+        attack = Input.GetButtonDown("Attack");
+
+        if (attack)
+        {
+            Debug.Log("ataq");
+        }
 
         lastOnGroundTime -= Time.deltaTime;
         if (Grounded())
@@ -249,4 +266,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void Attack() {
+        timeSinceAttack += Time.deltaTime;
+        if(attack && timeSinceAttack >= timeBetweenAtack)
+        {
+            timeSinceAttack = 0;
+            //animação do ataque
+        }
+
+        Hit(SideAttackTransform, SideAttackArea);
+        
+    }
+
+    private void Hit(Transform attackTransform, Vector2 attackArea) {
+        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(attackTransform.position, attackArea, 0, attacableLayer);
+
+        //if (objectsToHit.Length > 0) {
+           // Debug.Log("hit");
+        //}
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(SideAttackTransform.position, SideAttackArea);
+    }
 }
