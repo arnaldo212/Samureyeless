@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
     private bool dashed;
     private float gravity;
+    Animator anim;
+
+    public Vector3 targetScale = new Vector3(3.5f, 3.5f, 3.5f);
+
 
     public static PlayerMovement Instance;
     private void Awake() {
@@ -71,6 +75,14 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         pState = GetComponent<PlayerStateList>();
         gravity = rb.gravityScale;
+        anim = GetComponent<Animator>();
+
+        lastOnGroundTime -= Time.deltaTime;
+        if (Grounded())
+        {
+            lastOnGroundTime = 0.1f;
+            pState.jumping = false;
+        }
     }
 
     // Update is called once per frame
@@ -81,11 +93,15 @@ public class PlayerMovement : MonoBehaviour
         if (pState.dashing) return;
         StartDash();
         Attack();
+        
     }
 
     private void FixedUpdate() {
         Run(lerpAmount);
         HandleJump();
+        //Flip();
+        // Mantém a escala independente da animação
+        //transform.localScale = targetScale;
     }
 
     void GetInputs() {
@@ -104,9 +120,28 @@ public class PlayerMovement : MonoBehaviour
             lastOnGroundTime = 0.1f;
         }
     }
+
+    /*void Flip() {
+        //vira o homem para o lado que está indo
+        if (xAxis < 0)
+        {
+            transform.eulerAngles = new Vector2(-1, transform.localScale.y);
+            pState.lookingRight = false;
+        }
+        else if (xAxis > 0)
+        {
+            transform.eulerAngles = new Vector2(1, transform.localScale.y);
+            pState.lookingRight = true;
+        }
+    }*/
     //movimento principal do personagem
     private void Run(float lerpAmount) {
         if (pState.dashing) return; //não mexe quando da dash
+
+        //treshold de velocidade, sem isso a animação rodava mais algumas vezes mesmo parado
+        float velocityThreshold = 0.1f;
+        bool isMoving = Mathf.Abs(rb.linearVelocity.x) > velocityThreshold;
+        anim.SetBool("Running", isMoving && Grounded());
 
         float targetSpeed = xAxis * runMaxSpeed;
 
@@ -152,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // Jump hang modifier
+        //jump hang modifier
         if ((pState.jumping || isJumpFalling) && Mathf.Abs(rb.linearVelocity.y) < jumpHangTimeThreshold)
         {
             accelRate *= jumpHangAccelerationMult;
@@ -173,14 +208,18 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
 
         //vira o sprite
-        if (xAxis > 0.01f)
+        if (xAxis < 0)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(-Mathf.Abs(targetScale.x), targetScale.y, targetScale.z);
+            pState.lookingRight = false;
         }
-        else if (xAxis < -0.01f)
+        else if (xAxis > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(Mathf.Abs(targetScale.x), targetScale.y, targetScale.z);
+            pState.lookingRight = true;
         }
+
+
     }
 
     void StartDash() {
