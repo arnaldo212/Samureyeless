@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 800638733043e49479f31e3e49c07845
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7691173928781352071
+    second: SamurelessFrontAttack-Sheet_0
+  - first:
+      213: 5838262473921105582
+    second: SamurelessFrontAttack-Sheet_1
+  - first:
+      213: 3547514209474883492
+    second: SamurelessFrontAttack-Sheet_2
+  - first:
+      213: -6762403564326150232
+    second: SamurelessFrontAttack-Sheet_3
+  - first:
+      213: -6549713682066640383
+    second: SamurelessFrontAttack-Sheet_4
+  - first:
+      213: 4856717906722804294
+    second: SamurelessFrontAttack-Sheet_5
+  - first:
+      213: -5455700469228069481
+    second: SamurelessFrontAttack-Sheet_6
+  - first:
+      213: -3046773762179850753
+    second: SamurelessFrontAttack-Sheet_7
+  - first:
+      213: 7985374288701561984
+    second: SamurelessFrontAttack-Sheet_8
+  - first:
+      213: 8606516328214996201
+    second: SamurelessFrontAttack-Sheet_9
+  - first:
+      213: 7010004390822754440
+    second: SamurelessFrontAttack-Sheet_10
+  - first:
+      213: -2469611601642730530
+    second: SamurelessFrontAttack-Sheet_11
+  - first:
+      213: 8081798313977602101
+    second: SamurelessFrontAttack-Sheet_12
+  - first:
+      213: -4969797502306720365
+    second: SamurelessFrontAttack-Sheet_13
+  - first:
+      213: 2916977371857873533
+    second: SamurelessFrontAttack-Sheet_14
+  - first:
+      213: 8891011675701026699
+    second: SamurelessFrontAttack-Sheet_15
+  - first:
+      213: 7304620023541894553
+    second: SamurelessFrontAttack-Sheet_16
+  - first:
+      213: 4392923879745057043
+    second: SamurelessFrontAttack-Sheet_17
+  - first:
+      213: -7899651449723988638
+    second: SamurelessFrontAttack-Sheet_18
+  - first:
+      213: 3027335971861289660
+    second: SamurelessFrontAttack-Sheet_19
+  - first:
+      213: -1598680627796980889
+    second: SamurelessFrontAttack-Sheet_20
+  - first:
+      213: -3938228052806418214
+    second: SamurelessFrontAttack-Sheet_21
+  - first:
+      213: -2290182145339463427
+    second: SamurelessFrontAttack-Sheet_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 9
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edaa197f43f08104a965cc4ee6a73961
+      internalID: -1009255042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 9
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac2ffad7101b094eb68acec799190d8
+      internalID: -540945334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 8
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb3cb812d91ad448a5e43bd6005010f
+      internalID: -387860044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 8
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b666ea72eb06f7b4390d42376bad6e93
+      internalID: -1403268352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 8
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c7d199d15f0714d9ad884cafdc4d7d
+      internalID: 1321130521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 6
+        width: 57
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a7c87d00f099b4488fdddbd50c098b
+      internalID: -882747952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 11
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89ed8b7d14bf024794043e8edd340b8
+      internalID: 1244578755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 11
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c817390f37a0242a7f5d96bc3974e1
+      internalID: 480764221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 11
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0d4a66cbcc4a34ba94c53d3348c521
+      internalID: -9199504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 9
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd997c4c6d6af643a1854cda5c77479
+      internalID: 1948780307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 0
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1643b5b9bfda0f74e9b96ff532375c31
+      internalID: 445553443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 0
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e477298435fa7674a8f1768a604a570d
+      internalID: 1816354281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 0
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e4321d684193047bf4f3ad552d6cd1
+      internalID: -407835925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 9
+        width: 63
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0de92da45bf2d64fbf78272b63dc3ec
+      internalID: -445027473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 8
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0179a863196c7a4d8f5cac35a03c73d
+      internalID: -584160682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 8
+        width: 54
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e74827ebd4f2f45a87b0bbfdd70c3c
+      internalID: -1043004787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 9
+        width: 51
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9645c391b0133f24889b7536db306e32
+      internalID: 1300787915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 11
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345783e805cfbb9448699c960d340d56
+      internalID: -574661549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 9
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6549da0673774c24494ee250464e97f7
+      internalID: 2000041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 9
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797e8b932cd3bb84bb8195ad60d166fb
+      internalID: -140424432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 0
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036f695000ff7e143ae1f3fa6b47052a
+      internalID: -1615151167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 9
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2fabddcdc74e8643b92adae5c16e2d5
+      internalID: -599284508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SamurelessFrontAttack-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 9
+        width: 51
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edfb7a3c9ad5c8a45a589af73d034845
+      internalID: 2115136157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a9d2267216c1c1c4d977a1ba83dc125f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SamurelessFrontAttack-Sheet_0: -1009255042
+      SamurelessFrontAttack-Sheet_1: -540945334
+      SamurelessFrontAttack-Sheet_10: 445553443
+      SamurelessFrontAttack-Sheet_11: 1816354281
+      SamurelessFrontAttack-Sheet_12: -407835925
+      SamurelessFrontAttack-Sheet_13: -445027473
+      SamurelessFrontAttack-Sheet_14: -584160682
+      SamurelessFrontAttack-Sheet_15: -1043004787
+      SamurelessFrontAttack-Sheet_16: 1300787915
+      SamurelessFrontAttack-Sheet_17: -574661549
+      SamurelessFrontAttack-Sheet_18: 2000041
+      SamurelessFrontAttack-Sheet_19: -140424432
+      SamurelessFrontAttack-Sheet_2: -387860044
+      SamurelessFrontAttack-Sheet_20: -1615151167
+      SamurelessFrontAttack-Sheet_21: -599284508
+      SamurelessFrontAttack-Sheet_22: 2115136157
+      SamurelessFrontAttack-Sheet_3: -1403268352
+      SamurelessFrontAttack-Sheet_4: 1321130521
+      SamurelessFrontAttack-Sheet_5: -882747952
+      SamurelessFrontAttack-Sheet_6: 1244578755
+      SamurelessFrontAttack-Sheet_7: 480764221
+      SamurelessFrontAttack-Sheet_8: -9199504
+      SamurelessFrontAttack-Sheet_9: 1948780307
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

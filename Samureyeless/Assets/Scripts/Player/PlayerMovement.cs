@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Configs de Ataque")]
     [SerializeField] Transform SideAttackTransform;
     [SerializeField] Vector2 SideAttackArea;
-    [SerializeField] LayerMask attacableLayer;
+    [SerializeField] LayerMask attackableLayer;
     bool attack = false;
     [SerializeField] private float timeBetweenAtack;
     private float timeSinceAttack = 0.5f;
@@ -92,27 +92,24 @@ public class PlayerMovement : MonoBehaviour
         UpdateJumpVariables();
         if (pState.dashing) return;
         StartDash();
-        Attack();
+        //Attack();
         
     }
 
     private void FixedUpdate() {
         Run(lerpAmount);
         HandleJump();
-        //Flip();
-        // Mantém a escala independente da animação
-        //transform.localScale = targetScale;
     }
 
     void GetInputs() {
         xAxis = Input.GetAxisRaw("Horizontal");
 
-        attack = Input.GetButtonDown("Attack");
+        //attack = Input.GetButtonDown("Attack");
 
-        if (attack)
-        {
-            Debug.Log("ataq");
-        }
+        //if (attack)
+        //{
+        //    Debug.Log("ataq");
+        //}
 
         lastOnGroundTime -= Time.deltaTime;
         if (Grounded())
@@ -121,19 +118,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    /*void Flip() {
-        //vira o homem para o lado que está indo
-        if (xAxis < 0)
-        {
-            transform.eulerAngles = new Vector2(-1, transform.localScale.y);
-            pState.lookingRight = false;
-        }
-        else if (xAxis > 0)
-        {
-            transform.eulerAngles = new Vector2(1, transform.localScale.y);
-            pState.lookingRight = true;
-        }
-    }*/
+    
     //movimento principal do personagem
     private void Run(float lerpAmount) {
         if (pState.dashing) return; //não mexe quando da dash
@@ -264,9 +249,12 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             pState.jumping = true;
             jumpBufferCounter = 0;
-        }
 
-        
+            
+        }
+        //ativa animação de pulo
+        anim.SetBool("Jump", !Grounded());
+
     }
 
     void UpdateJumpVariables() {
@@ -275,6 +263,7 @@ public class PlayerMovement : MonoBehaviour
             pState.jumping = false;
             isJumpFalling = false;
             coyoteTimeCounter = coyoteTime;
+
         }
         else
         {
@@ -318,7 +307,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Hit(Transform attackTransform, Vector2 attackArea) {
-        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(attackTransform.position, attackArea, 0, attacableLayer);
+        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(attackTransform.position, attackArea, 0, attackableLayer);
 
         //if (objectsToHit.Length > 0) {
            // Debug.Log("hit");
