@@ -6,6 +6,7 @@ public class GroundEntryState : MeleeBaseState
         base.OnEnter(_statemachine);
 
         //atack
+        attackDamage = 10;
         attackIndex = 1;
         duration = 0.5f;
         anim.SetTrigger("FrontAttack" + attackIndex);

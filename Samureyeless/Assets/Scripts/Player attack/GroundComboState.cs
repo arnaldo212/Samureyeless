@@ -6,6 +6,7 @@ public class GroundComboState : MeleeBaseState
         base.OnEnter(_statemachine);
 
         //atack
+        attackDamage = 15;
         attackIndex = 2;
         duration = 0.5f;
         anim.SetTrigger("FrontAttack" + attackIndex);

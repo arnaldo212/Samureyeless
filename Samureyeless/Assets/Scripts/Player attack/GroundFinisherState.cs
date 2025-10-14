@@ -6,6 +6,7 @@ public class GroundFinisherState : MeleeBaseState
         base.OnEnter(_statemachine);
 
         //atack
+        attackDamage = 20;
         attackIndex = 3;
         duration = 0.75f;
         anim.SetTrigger("FrontAttack" + attackIndex);
