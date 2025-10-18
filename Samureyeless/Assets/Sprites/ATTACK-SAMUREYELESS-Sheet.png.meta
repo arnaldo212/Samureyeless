@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 9f09622d2bad729448240546997fe923
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6825000555899993276
+    second: ATTACK-SAMUREYELESS-Sheet_0
+  - first:
+      213: 446503179467268756
+    second: ATTACK-SAMUREYELESS-Sheet_1
+  - first:
+      213: 5214833497928223275
+    second: ATTACK-SAMUREYELESS-Sheet_2
+  - first:
+      213: 6981792285785853030
+    second: ATTACK-SAMUREYELESS-Sheet_3
+  - first:
+      213: 8864355128685869859
+    second: ATTACK-SAMUREYELESS-Sheet_4
+  - first:
+      213: 5388515339102428978
+    second: ATTACK-SAMUREYELESS-Sheet_5
+  - first:
+      213: 4682767280132336326
+    second: ATTACK-SAMUREYELESS-Sheet_6
+  - first:
+      213: -134730844734096621
+    second: ATTACK-SAMUREYELESS-Sheet_7
+  - first:
+      213: 2560375674827636542
+    second: ATTACK-SAMUREYELESS-Sheet_8
+  - first:
+      213: -1308086916761104085
+    second: ATTACK-SAMUREYELESS-Sheet_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 13
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebab6d483471cd49ba444053dcb240f
+      internalID: 2101304060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 13
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd4f8874dcdd9b4395a8092e2cb67ec
+      internalID: 724057863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 13
+        width: 71
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac9f03c74610974eb0a890d2a4f5bc5
+      internalID: 421990876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 13
+        width: 48
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618136e3011613643a5d6d531541b1c4
+      internalID: -2140800576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 13
+        width: 67
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0130213a1bb3a4bb07d2f854aeeea1
+      internalID: -1391485522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 13
+        width: 53
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bd05d0c251fbd4d83c7a019e8a9fb8
+      internalID: 695204047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 13
+        width: 66
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dad8d46369b23a41be7e363482a2038
+      internalID: 936741371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 13
+        width: 54
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a4e6e4f25d5324ba687d4b302549f1
+      internalID: 1719454922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 13
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5eb62d00e1ca84da3e39dd10c7f900
+      internalID: 1049366385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK-SAMUREYELESS-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 13
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58c969f8b9ace9408f1a32ca127264a
+      internalID: -88251104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 50396d95ed711fe4088f246da3a877d2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ATTACK-SAMUREYELESS-Sheet_0: 2101304060
+      ATTACK-SAMUREYELESS-Sheet_1: 724057863
+      ATTACK-SAMUREYELESS-Sheet_2: 421990876
+      ATTACK-SAMUREYELESS-Sheet_3: -2140800576
+      ATTACK-SAMUREYELESS-Sheet_4: -1391485522
+      ATTACK-SAMUREYELESS-Sheet_5: 695204047
+      ATTACK-SAMUREYELESS-Sheet_6: 936741371
+      ATTACK-SAMUREYELESS-Sheet_7: 1719454922
+      ATTACK-SAMUREYELESS-Sheet_8: 1049366385
+      ATTACK-SAMUREYELESS-Sheet_9: -88251104
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
