@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -224,8 +225,23 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         pState.dashing = true;
         rb.gravityScale = 0;
-        rb.linearVelocity = new Vector3(transform.localScale.x * dashSpeed, 0);
+
+        // Pega a direção correta como -1 ou 1, sem depender da escala do sprite
+        float dashDirection = pState.lookingRight ? 1f : -1f;
+
+        // Zera a velocidade atual antes de aplicar o dash (evita acúmulo com o pulo)
+        rb.linearVelocity = Vector2.zero;
+
+        rb.linearVelocity = new Vector2(dashDirection * dashSpeed, 0);
+
         yield return new WaitForSeconds(dashTime);
+
+        // Zera o momentum horizontal ao terminar o dash no ar
+        if (!Grounded())
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x * 0.3f, rb.linearVelocity.y);
+        }
+
         rb.gravityScale = gravity;
         pState.dashing = false;
         yield return new WaitForSeconds(dashCooldown);
