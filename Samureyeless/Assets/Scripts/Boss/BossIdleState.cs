@@ -10,7 +10,7 @@ public class BossIdleState : BossState
     }
 
     public override void Update() {
-        // Verifica se o jogador entrou no range de detecção
+        //verifica se o jogador entrou no range de detecção
         float distToPlayer = Vector2.Distance(boss.transform.position, boss.Player.position);
 
         if (distToPlayer <= boss.detectionRange)

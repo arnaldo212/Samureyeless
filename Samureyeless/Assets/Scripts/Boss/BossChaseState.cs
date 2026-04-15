@@ -7,31 +7,31 @@ public class BossChaseState : BossState
 
     public override void Enter() {
         Debug.Log("Boss: Chasing");
-        // Toca animação de corrida/movimento
+        // animação de corrida/movimento
     }
 
     public override void Update() {
         float distToPlayer = Vector2.Distance(boss.transform.position, boss.Player.position);
 
-        // Chegou perto o suficiente para atacar?
+        //chegou perto o suficiente para atacar?
         if (distToPlayer <= boss.attackRange)
         {
             boss.ChangeState(boss.AttackState);
             return;
         }
 
-        // Perdeu o jogador de vista?
+        //perdeu o jogador de vista?
         if (distToPlayer > boss.detectionRange)
         {
-            boss.ChangeState(boss.IdleState);
+            boss.ChangeState(boss.PatrolState);
             return;
         }
 
-        // Move em direção ao jogador
+        //move em direção ao jogador
         Vector2 direction = (boss.Player.position - boss.transform.position).normalized;
         boss.Rb.linearVelocity = new Vector2(direction.x * boss.moveSpeed, boss.Rb.linearVelocity.y);
 
-        // Vira o sprite na direção certa
+        //vira o sprite na direção certa
         if (direction.x != 0)
         {
             Vector3 scale = boss.transform.localScale;

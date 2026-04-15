@@ -310,7 +310,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Attack() {
+    void Attack() {//apagar depois
         timeSinceAttack += Time.deltaTime;
         if(attack && timeSinceAttack >= timeBetweenAtack)
         {

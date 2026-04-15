@@ -1,7 +1,5 @@
 using UnityEngine;
 
-using UnityEngine;
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class BossController : MonoBehaviour
 {
@@ -15,28 +13,36 @@ public class BossController : MonoBehaviour
     public float attackRange = 1.5f;
     public float attackDuration = 0.8f;
 
-    // Estados
+    [Header("Patrulha")]
+    public Vector2 patrolPointA = new Vector2(-3f, 0f);
+    public Vector2 patrolPointB = new Vector2(3f, 0f);
+    public float patrolSpeed = 1.5f;
+    public float patrolWaitTime = 1f;
+
+
     public BossIdleState IdleState { get; private set; }
     public BossChaseState ChaseState { get; private set; }
     public BossAttackState AttackState { get; private set; }
+    public BossPatrolState PatrolState { get; private set; }
 
     private BossState currentState;
 
     private void Awake() {
         Rb = GetComponent<Rigidbody2D>();
 
-        // Instancia os estados passando referência do controller
+        //instancia os estados passando referência do controller
         IdleState = new BossIdleState(this);
         ChaseState = new BossChaseState(this);
         AttackState = new BossAttackState(this);
+        PatrolState = new BossPatrolState(this);
     }
 
     private void Start() {
-        // Busca o jogador automaticamente se não foi assignado
+        //busca o jogador automaticamente se não foi assignado
         if (Player == null)
             Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        ChangeState(IdleState);
+        ChangeState(IdleState);//talvez deve começar paatrulhando?
     }
 
     private void Update() {
@@ -49,12 +55,18 @@ public class BossController : MonoBehaviour
         currentState.Enter();
     }
 
-    // Visualiza os ranges no Editor
+    //visualiza os ranges 
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        //pontos de patrulha no editor
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(patrolPointA, 0.2f);
+        Gizmos.DrawSphere(patrolPointB, 0.2f);
+        Gizmos.DrawLine(patrolPointA, patrolPointB);
     }
 }
