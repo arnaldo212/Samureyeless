@@ -13,6 +13,10 @@ public class BossController : MonoBehaviour
     public float attackRange = 1.5f;
     public float attackDuration = 0.8f;
 
+    [Header("Dano")]
+    public BossHitBox HitBox;
+    public float attackDamage = 20f;
+
     [Header("Patrulha")]
     public Vector2 patrolPointA = new Vector2(-3f, 0f);
     public Vector2 patrolPointB = new Vector2(3f, 0f);

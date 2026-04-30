@@ -12,6 +12,7 @@ public class BossChaseState : BossState
 
     public override void Update() {
         float distToPlayer = Vector2.Distance(boss.transform.position, boss.Player.position);
+        //Debug.Log("Dist ataque: " + distToPlayer + " | attackRange: " + boss.attackRange);
 
         //chegou perto o suficiente para atacar?
         if (distToPlayer <= boss.attackRange)
