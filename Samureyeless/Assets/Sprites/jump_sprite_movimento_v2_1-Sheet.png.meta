@@ -88,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -136,6 +136,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -559,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jump_sprite_movimento_v2_1-Sheet_0: -6674168896190473415
+      jump_sprite_movimento_v2_1-Sheet_1: 7213098441669426335
+      jump_sprite_movimento_v2_1-Sheet_10: 5139205426985368494
+      jump_sprite_movimento_v2_1-Sheet_11: -2513083011487776701
+      jump_sprite_movimento_v2_1-Sheet_12: -3332581828962591272
+      jump_sprite_movimento_v2_1-Sheet_13: 1691989623063708698
+      jump_sprite_movimento_v2_1-Sheet_14: -2917200362588113314
+      jump_sprite_movimento_v2_1-Sheet_15: 7568427740085407900
+      jump_sprite_movimento_v2_1-Sheet_16: -3315430261337095245
+      jump_sprite_movimento_v2_1-Sheet_17: -7143980104974057576
+      jump_sprite_movimento_v2_1-Sheet_2: 6163203949951558419
+      jump_sprite_movimento_v2_1-Sheet_3: 989708093053431868
+      jump_sprite_movimento_v2_1-Sheet_4: 7114060704744896362
+      jump_sprite_movimento_v2_1-Sheet_5: -5939722891079324887
+      jump_sprite_movimento_v2_1-Sheet_6: -2369312641118228342
+      jump_sprite_movimento_v2_1-Sheet_7: 3181013289137378070
+      jump_sprite_movimento_v2_1-Sheet_8: -6439986321643786051
+      jump_sprite_movimento_v2_1-Sheet_9: -8466984293730133491
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
