@@ -25,7 +25,7 @@ public class BossHitBox : MonoBehaviour
         if (other.transform.IsChildOf(boss.transform) || other.gameObject == boss.gameObject) return;
 
         Debug.Log("Trigger com: " + other.gameObject.name);
-        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+        PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);

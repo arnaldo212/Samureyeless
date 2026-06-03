@@ -73,4 +73,11 @@ public class BossController : MonoBehaviour
         Gizmos.DrawSphere(patrolPointB, 0.2f);
         Gizmos.DrawLine(patrolPointA, patrolPointB);
     }
+
+    public void FaceDirection(float directionX) {
+        if (directionX == 0) return;
+        Vector3 scale = transform.localScale;
+        scale.x = Mathf.Abs(scale.x) * Mathf.Sign(directionX) * -1f;
+        transform.localScale = scale;
+    }
 }

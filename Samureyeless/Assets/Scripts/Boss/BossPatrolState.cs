@@ -59,12 +59,7 @@ public class BossPatrolState : BossState
         boss.Rb.linearVelocity = new Vector2(direction.x * boss.patrolSpeed, boss.Rb.linearVelocity.y);
 
         //vira o sprite na direção certa
-        if (direction.x != 0)
-        {
-            Vector3 scale = boss.transform.localScale;
-            scale.x = Mathf.Abs(scale.x) * Mathf.Sign(direction.x);
-            boss.transform.localScale = scale;
-        }
+        boss.FaceDirection(direction.x);
     }
 
     public override void Exit() {

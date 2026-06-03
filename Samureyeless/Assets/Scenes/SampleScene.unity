@@ -724,7 +724,7 @@ MonoBehaviour:
   dashSpeed: 40
   dashTime: 0.2
   dashCooldown: 0.35
-  SideAttackTransform: {fileID: 1041503974}
+  SideAttackTransform: {fileID: 0}
   SideAttackArea: {x: 2.5, y: 1.5}
   attackableLayer:
     serializedVersion: 2
@@ -810,6 +810,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   invincibleTime: 1
+  invincibleTimer: 2
   isInvincible: 0
 --- !u!61 &541246430
 BoxCollider2D:

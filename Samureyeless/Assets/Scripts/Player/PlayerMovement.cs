@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform SideAttackTransform;
     [SerializeField] Vector2 SideAttackArea;
     [SerializeField] LayerMask attackableLayer;
-    bool attack = false;
+    //bool attack = false;
     [SerializeField] private float timeBetweenAtack;
-    private float timeSinceAttack = 0.5f;
+    //private float timeSinceAttack = 0.5f;
     
 
     
@@ -226,6 +226,9 @@ public class PlayerMovement : MonoBehaviour
         pState.dashing = true;
         rb.gravityScale = 0;
 
+        PlayerHealth.Instance.isInvincible = true; // ativa i-frames
+        PlayerHealth.Instance.invincibleTimer = dashTime; // sincroniza timer com duração do dash
+
         // Pega a direção correta como -1 ou 1, sem depender da escala do sprite
         float dashDirection = pState.lookingRight ? 1f : -1f;
 
@@ -235,6 +238,10 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(dashDirection * dashSpeed, 0);
 
         yield return new WaitForSeconds(dashTime);
+
+        // só desativa se não tomou dano durante o dash (que teria reiniciado o timer)
+        if (PlayerHealth.Instance.invincibleTimer <= 0f)
+            PlayerHealth.Instance.isInvincible = false;
 
         // Zera o momentum horizontal ao terminar o dash no ar
         if (!Grounded())
@@ -310,7 +317,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Attack() {//apagar depois
+    /*void Attack() {//apagar depois
         timeSinceAttack += Time.deltaTime;
         if(attack && timeSinceAttack >= timeBetweenAtack)
         {
@@ -320,18 +327,18 @@ public class PlayerMovement : MonoBehaviour
 
         Hit(SideAttackTransform, SideAttackArea);
         
-    }
+    }*/
 
-    private void Hit(Transform attackTransform, Vector2 attackArea) {
+    /*private void Hit(Transform attackTransform, Vector2 attackArea) {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(attackTransform.position, attackArea, 0, attackableLayer);
 
         //if (objectsToHit.Length > 0) {
            // Debug.Log("hit");
         //}
-    }
+    }*/
 
-    private void OnDrawGizmos() {
+    /*private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(SideAttackTransform.position, SideAttackArea);
-    }
+    }*/
 }

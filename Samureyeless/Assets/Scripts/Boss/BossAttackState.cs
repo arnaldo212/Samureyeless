@@ -10,6 +10,11 @@ public class BossAttackState : BossState
     public override void Enter() {
         Debug.Log("Boss: Attacking");
         boss.Rb.linearVelocity = Vector2.zero; // para o boss
+
+        // vira para o jogador antes de atacar
+        float dir = boss.Player.position.x - boss.transform.position.x;
+        boss.FaceDirection(dir);
+
         boss.StartCoroutine(AttackRoutine());
     }
 

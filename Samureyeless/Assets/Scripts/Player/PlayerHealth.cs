@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Invencibilidade após tomar dano")]
     public float invincibleTime = 1f;
-    private float invincibleTimer = 0f;
+    public float invincibleTimer = 0f;
     public bool isInvincible = false;
 
     public static PlayerHealth Instance;
