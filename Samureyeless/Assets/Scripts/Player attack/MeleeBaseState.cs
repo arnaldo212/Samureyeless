@@ -17,6 +17,8 @@ public class MeleeBaseState : State
     protected Collider2D hitBox;
     //cached already struck objects of said attack to avoid overlapping attacks on same target
     private List<Collider2D> collidersDamaged;
+    //input buffer timer
+    private float attackPressedTimer = 0;
 
     public float attackDamage;
     
@@ -30,10 +32,18 @@ public class MeleeBaseState : State
 
     public override void OnUpdate() {
         base.OnUpdate();
+        attackPressedTimer -= Time.deltaTime;
 
-        Attack();
+        if(anim.GetFloat("Weapon.Active") > 0f)
+        {
+            Attack();
+        }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) {
+            attackPressedTimer = 1;
+        }
+
+        if (anim.GetFloat("Attack.Window.Open") > 0f && attackPressedTimer > 0)
         {
             shouldCombo = true;
         }
@@ -41,6 +51,9 @@ public class MeleeBaseState : State
 
     public override void OnExit() {
         base.OnExit();
+
+        shouldCombo = false;
+        attackPressedTimer = 0;
     }
 
     protected void Attack() {
