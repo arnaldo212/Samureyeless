@@ -34,9 +34,16 @@ public class MeleeBaseState : State
         base.OnUpdate();
         attackPressedTimer -= Time.deltaTime;
 
-        if(anim.GetFloat("Weapon.Active") > 0f)
+        PlayerStateList pState = GetComponent<PlayerStateList>();
+
+        if (anim.GetFloat("Weapon.Active") > 0f)
         {
             Attack();
+            if(pState != null) pState.parrying = true; // está atacando = pode fazer parry
+        }
+        else
+        {
+            if (pState != null) pState.parrying = false;
         }
 
         if (Input.GetMouseButtonDown(0)) {
@@ -54,6 +61,9 @@ public class MeleeBaseState : State
 
         shouldCombo = false;
         attackPressedTimer = 0;
+
+        PlayerStateList pState = GetComponent<PlayerStateList>();
+        if (pState != null) pState.parrying = false;
     }
 
     protected void Attack() {

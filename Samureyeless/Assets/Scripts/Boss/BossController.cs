@@ -23,6 +23,11 @@ public class BossController : MonoBehaviour
     public float patrolSpeed = 1.5f;
     public float patrolWaitTime = 1f;
 
+    [Header("Parry")]
+    public float parryWindowDuration = 0.4f; // duração da janela de parry
+    public bool isParryWindow = false;        // true durante a janela
+    public float parryStunDuration = 2f;     // tempo que o boss fica stunado
+
 
     public BossIdleState IdleState { get; private set; }
     public BossChaseState ChaseState { get; private set; }
@@ -79,5 +84,9 @@ public class BossController : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x = Mathf.Abs(scale.x) * Mathf.Sign(directionX) * -1f;
         transform.localScale = scale;
+    }
+
+    public void TriggerParry() {
+        ChangeState(new BossStunState(this, parryStunDuration)); // cria logo abaixo
     }
 }
