@@ -12,6 +12,7 @@ public class BossController : MonoBehaviour
     public float detectionRange = 8f;
     public float attackRange = 1.5f;
     public float attackDuration = 0.8f;
+    public float attackCooldown = 1.5f;
 
     [Header("Dano")]
     public BossHitBox HitBox;
@@ -27,6 +28,12 @@ public class BossController : MonoBehaviour
     public float parryWindowDuration = 0.4f; // duração da janela de parry
     public bool isParryWindow = false;        // true durante a janela
     public float parryStunDuration = 2f;     // tempo que o boss fica stunado
+    public float telegraphDuration = 1.5f;
+
+    [Header("Telegraph Visual")]
+    public SpriteRenderer spriteRenderer;
+    public Color telegraphColor = Color.red;
+    public Color stunColor = Color.yellow;
 
 
     public BossIdleState IdleState { get; private set; }
@@ -87,6 +94,6 @@ public class BossController : MonoBehaviour
     }
 
     public void TriggerParry() {
-        ChangeState(new BossStunState(this, parryStunDuration)); // cria logo abaixo
+        ChangeState(new BossStunState(this, parryStunDuration)); 
     }
 }

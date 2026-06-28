@@ -40,6 +40,7 @@ public class MeleeBaseState : State
         {
             Attack();
             if(pState != null) pState.parrying = true; // está atacando = pode fazer parry
+            //Debug.Log("PARRYING = TRUE, Weapon.Active = " + anim.GetFloat("Weapon.Active"));
         }
         else
         {

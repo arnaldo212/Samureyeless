@@ -24,21 +24,22 @@ public class BossHitBox : MonoBehaviour
         // ignora colisão com o próprio boss
         if (other.transform.IsChildOf(boss.transform) || other.gameObject == boss.gameObject) return;
 
+        Debug.Log("Trigger com: " + other.gameObject.name);
+
+        PlayerStateList pState = other.GetComponentInParent<PlayerStateList>();
+
+        // SEMPRE prioriza parry, mesmo que o collider que entrou não seja a hitbox de ataque
         // checa se foi parry — player atacando durante a janela
-        if (boss.isParryWindow)
+        if (boss.isParryWindow && pState != null && pState.parrying)
         {
-            PlayerStateList pState = other.GetComponentInParent<PlayerStateList>();
-            if (pState != null && pState.parrying)
-            {
-                Debug.Log("PARRY!");
-                boss.isParryWindow = false;
-                boss.TriggerParry();
-                DisableHitbox();
-                return;
-            }
+           
+            Debug.Log("PARRY!");
+            boss.isParryWindow = false;
+            boss.TriggerParry();
+            DisableHitbox();
+            return;
         }
 
-        Debug.Log("Trigger com: " + other.gameObject.name);
         PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
         if (playerHealth != null)
         {

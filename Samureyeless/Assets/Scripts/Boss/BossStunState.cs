@@ -12,6 +12,7 @@ public class BossStunState : BossState
     public override void Enter() {
         Debug.Log("Boss: Stunado por parry!");
         boss.Rb.linearVelocity = Vector2.zero;
+        boss.spriteRenderer.color = boss.stunColor;
         boss.StartCoroutine(StunRoutine());
     }
 

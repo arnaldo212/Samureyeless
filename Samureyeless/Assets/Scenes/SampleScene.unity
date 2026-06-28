@@ -331,13 +331,21 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5
   attackRange: 2.5
-  attackDuration: 0.8
+  attackDuration: 1.25
+  attackCooldown: 1.5
   HitBox: {fileID: 804091683}
   attackDamage: 20
   patrolPointA: {x: -3, y: 0}
   patrolPointB: {x: 3, y: 0}
   patrolSpeed: 1.5
   patrolWaitTime: 1
+  parryWindowDuration: 1
+  isParryWindow: 0
+  parryStunDuration: 4
+  telegraphDuration: 1.5
+  spriteRenderer: {fileID: 516456472}
+  telegraphColor: {r: 1, g: 0, b: 0, a: 1}
+  stunColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!50 &516456478
 Rigidbody2D:
   serializedVersion: 5
@@ -608,7 +616,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.42143402, y: 0.47}
+    oldSize: {x: 0.34, y: 0.45}
     newSize: {x: 0.34, y: 0.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -746,6 +754,7 @@ MonoBehaviour:
   jumping: 0
   dashing: 0
   lookingRight: 0
+  parrying: 0
 --- !u!95 &541246426
 Animator:
   serializedVersion: 7
@@ -850,7 +859,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.42143402, y: 0.47}
+    oldSize: {x: 0.34, y: 0.45}
     newSize: {x: 0.34, y: 0.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
